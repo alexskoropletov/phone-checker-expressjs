@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+  form.form-horizontal(
+    method='get'
+    action='/admin/form'
+  )
+    div.form-group
+      div.col-sm-2
+        button.btn.btn-default(
+          type="submit"
+        ) Add phone number
+      div.col-sm-2
+        a.btn.btn-default(
+          href="/users/logout"
+        ) Sign out
+
+  table.table
+    thead
+      tr
+        th ID
+        th Phone
+        th &nbsp;
+        th &nbsp;
+    tbody
+      each val in list
+        tr(id="phone" + val.id)
+          td= val.id
+          td= val.phone
+          td
+            a(href="/admin/form?id=" + val.id)
+              span.glyphicon.glyphicon-pencil(aria-hidden="true")
+          td
+            a.delete(href="#", data-id="" + val.id)
+              span.glyphicon.glyphicon-remove(aria-hidden="true")

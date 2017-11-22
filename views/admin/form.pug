@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  form.form-horizontal(
+    method='post'
+    action='/admin/form'
+  )
+    include ../message
+    input(
+      type="hidden"
+      name="id"
+      value=item.id
+    )
+    div.form-group
+      div.col-sm-10
+        input.form-control(
+          type="text"
+          name="phone"
+          id="phone"
+          placeholder="Phone number"
+          value=item.phone
+        )
+    div.form-group
+      div.col-sm-10
+        button.btn.btn-default(
+          type="submit"
+        ) Save

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  a.btn.btn-default(
+    href="/users/login"
+  ) Admin sign in
+  div.row &nbsp;
+  div.row &nbsp;
+  form.form-horizontal(
+    method='post'
+    action='/'
+  )
+    include message
+    div.form-group
+      input.form-control(type='text', name='phone', id='phone', placeholder='Phone number to check')
+
+    button.btn.btn-default(type='submit') OK
